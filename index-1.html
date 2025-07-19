@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukund Jangid - Technical Product Manager</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23334155" fill-opacity="0.1" points="0,0 1000,300 1000,1000 0,700"/></svg>') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: var(--dark-bg);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #334155;
+            backdrop-filter: blur(10px);
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: rotate(0deg);
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background: var(--card-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 6rem 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .timeline-item h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 0;
+            background: var(--card-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--dark-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #334155;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            transform: translateY(-2px);
+        }
+
+        .contact-link i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid #334155;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Mukund Jangid</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Technical Product Manager</h1>
+                    <p class="subtitle">Platform Engineering × AI × Product Strategy</p>
+                    <p class="description">
+                        Technology leader with 8+ years building scalable infrastructure and AI-powered platforms. 
+                        Specializing in the intersection of technical architecture and product ownership, 
+                        driving business value through intelligent automation and cloud-native solutions.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                        <a href="https://github.com/mjangid7" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Platform & AI Engineering</h3>
+                        <p>Kubernetes • Cloud Native • ML Ops</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Building the Future of Platform Engineering</h3>
+                    <p>
+                        I'm passionate about building AI-powered platforms that bridge the gap between complex technical 
+                        infrastructure and meaningful business outcomes. My journey spans from hands-on SRE work to 
+                        product leadership, with a focus on cloud-native architectures, intelligent automation, and 
+                        developer experience.
+                    </p>
+                    <p>
+                        Currently exploring agentic AI, MCP servers, and how intelligent systems can transform 
+                        traditional platform engineering approaches.
+                    </p>
+                </div>
+                <div>
+                    <h3>Key Achievements</h3>
+                    <ul style="color: var(--text-secondary); margin-top: 1rem;">
+                        <li>Cut cloud provisioning time from 2 days to 2 hours with automated IaC</li>
+                        <li>Maintained 99.9%+ system reliability through resilient architecture</li>
+                        <li>Led platform modernization initiatives across multiple organizations</li>
+                        <li>Established GitOps-first workflows for improved deployment confidence</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">GCP</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">Terraform</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cogs"></i> DevOps & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="tag">ArgoCD</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Helm</span>
+                        <span class="tag">GitOps</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-stream"></i> Data & Streaming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Kafka</span>
+                        <span class="tag">Pulsar</span>
+                        <span class="tag">Temporal</span>
+                        <span class="tag">Event Streaming</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-robot"></i> AI & ML Ops</h3>
+                    <div class="skill-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Kubeflow</span>
+                        <span class="tag">ML Platforms</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Go</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Bash</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-line"></i> Monitoring</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Prometheus</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">ELK Stack</span>
+                        <span class="tag">DataDog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>SRE Lead</h3>
+                    <div class="company">Vertex Inc. • September 2024 - Present</div>
+                    <p>Leading end-to-end Kubernetes cluster lifecycle across AWS and GCP. Managing streaming infrastructure with Kafka and Connect, optimizing throughput through custom configurations. Delivering automated deployments with ArgoCD and Temporal.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Platform & SRE Engineer</h3>
+                    <div class="company">Albert Invent • August 2022 - September 2024</div>
+                    <p>Developed K8s controllers and operators in Go/Python for automated environment provisioning. Deployed microservices and ML workloads with Knative autoscaling and Istio networking. Enabled edge integrations with Azure Edge pipelines.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Senior Software Engineer - Lead</h3>
+                    <div class="company">Lifebit Biotech • December 2021 - August 2022</div>
+                    <p>Led platform modernization by refactoring legacy services into microservices. Managed infrastructure-as-code with Terraform on Azure. Created real-time analytics pipelines using Kafka for genomic processing services.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Automation & DevOps Engineer</h3>
+                    <div class="company">Dassault Systèmes • June 2020 - December 2021</div>
+                    <p>Built Jenkins pipelines for CI/CD across internal platforms. Implemented system automation with Puppet and Bash. Designed Grafana dashboards for monitoring and deployed edge-data ingestion pipelines.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Associate Consultant - Software Engineer</h3>
+                    <div class="company">Capgemini • May 2017 - June 2020</div>
+                    <p>Developed data ingestion systems for enterprise clients with Kafka-based event pipelines. Worked with data governance teams ensuring compliance with privacy regulations. Delivered reusable data sync tools for financial systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Regulatory & Compliance Platform</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2022 - 2024</span>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <p>Multi-tenant sandbox platform for chemical innovation with Kubernetes-native automation. Built custom Python operators for tenant lifecycle management and implemented autoscaling with AWS Fargate.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Pulsar</span>
+                        <span class="tag">Istio</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Genomics Cohort Browser</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2021 - 2022</span>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <p>Platform for genomic experts to conduct studies with cohort creation and K-flow analysis. Containerized ML-based services with robust CI/CD pipelines using ArgoCD and GitHub Actions.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">ArgoCD</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Sensor Cloud Data Fabric</h3>
+                    <div class="project-meta">
+                        <span class="project-date">2020 - 2021</span>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <p>Clinical trials management SaaS for human vital sensors monitoring. Edge data ingestion via Kafka with automated cloud deployments and real-time dashboards for biometric tracking.</p>
+                    <div class="skill-tags" style="margin-top: 1rem;">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Kafka</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">ELK Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>Interested in building the future of platform engineering together? Let's talk about how we can create intelligent, scalable systems that drive real business value.</p>
+            <div class="contact-links">
+                <a href="mailto:mukund.jangid95@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>mukund.jangid95@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/mukund-j-b01847b1/" class="contact-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/mjangid7" class="contact-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="tel:+917726806243" class="contact-link">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 7726806243</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mukund Jangid. Building the future of platform engineering.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
