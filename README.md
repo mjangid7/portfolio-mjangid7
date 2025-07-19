@@ -1,27 +1,83 @@
-# Mukund Jangid - Technical Product Manager Portfolio
+# Mukund Jangid - Technical Product Manager & AI Strategist Portfolio
 
-A modern, dark-themed portfolio website showcasing technical product management expertise and AI-focused leadership.
+A modern, responsive HTML one-page resume showcasing Mukund Jangid's expertise as a Technical Product Manager and AI Strategist with a focus on platform engineering and intelligent automation.
 
-## Overview
+## 👨‍💼 Professional Profile
 
-This enhanced portfolio website presents Mukund Jangid's professional journey as a Technical Product Manager and AI Strategist, featuring his transition from SRE to product leadership with a focus on AI-powered platforms.
+**Mukund Jangid** is a seasoned Technical Product Manager with 10+ years of experience transforming complex technical challenges into strategic product solutions. His unique journey from Site Reliability Engineering to product leadership has given him deep insights into building scalable, AI-powered platforms that bridge technical infrastructure with business impact.
 
-## ✨ Design Highlights
+### 🏆 Key Achievements
+- **US WIPO PCT Patent Holder** - Inventor on Patent WO2024233807A1 for "Method of generating regulatory outputs"
+- **99.5% Time Reduction** - Cut cloud provisioning from 2 days to 2 hours with automated Infrastructure as Code
+- **99.9%+ Reliability** - Maintained enterprise-grade uptime through resilient architecture
+- **$2M+ Cost Savings** - Delivered operational savings through intelligent automation
+- **3+ Platform Modernizations** - Led transformation initiatives across Fortune 500 organizations
 
-- **Modern Dark Theme**: Professional dark color scheme with blues and cyans that conveys technical expertise
-- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile devices
-- **Smooth Animations**: Advanced CSS animations and scroll-triggered effects
-- **Technical Branding**: Clean, minimalist design that appeals to tech leaders
-- **Interactive Elements**: Custom cursor, floating particles, and hover effects
+### 💼 Current Role
+**SRE Lead at Vertex Inc.** (September 2024 - Present)
+- Leading end-to-end Kubernetes cluster lifecycle across AWS and GCP
+- Managing streaming infrastructure with Kafka and Connect
+- Delivering automated deployments with ArgoCD and Temporal
 
-## 🎯 Key Sections
+## ✨ Resume Features
 
-1. **Hero Section**: Strong positioning as "Technical Product Manager" with unique value proposition
-2. **About**: Highlights transition from SRE to product leadership with AI focus
-3. **Skills Grid**: Organized by technology categories (Cloud, DevOps, AI/ML, etc.)
-4. **Experience Timeline**: Clean, chronological presentation of career progression
-5. **Featured Projects**: Showcases key projects with technology tags and media support
-6. **Contact**: Multiple ways to connect with professional styling
+### 🎨 Design & User Experience
+- **Dual Theme Support**: Light and dark themes with smooth transitions
+- **Responsive Design**: Mobile-first approach optimized for all devices
+- **Modern Typography**: Inter font family for professional readability
+- **Interactive Elements**: Custom animations, hover effects, and smooth scrolling
+- **Professional Color Scheme**: Blue/cyan palette conveying technical expertise
+
+### 📱 Theme Toggle
+- **Light Theme**: Clean, professional white/blue design for daytime viewing
+- **Dark Theme**: Sleek dark background with cyan accents for low-light environments
+- **Theme Persistence**: Remembers user preference via localStorage
+- **Smooth Transitions**: Animated theme switching with icon rotation
+
+## 📋 Resume Sections
+
+### 1. **Hero Section**
+- Professional title: "Technical Product Manager & AI Strategist"
+- Compelling value proposition highlighting AI-powered platforms expertise
+- Key statistics: 10+ years experience, 7+ projects delivered, 1 US WIPO PCT Patent, 3+ cloud migrations
+- Professional headshot with animated floating tech icons
+- Clear call-to-action buttons
+
+### 2. **About Me**
+- **Professional Journey**: From SRE to Product Leadership story
+- **Current Focus**: Agentic AI systems, GitOps automation, multi-cloud strategy
+- **Core Competencies**: Product strategy, platform engineering, cross-functional leadership
+- **Philosophy**: Intersection of technical excellence and user empathy
+- **Achievement Cards**: Highlighting patent, time reduction, reliability, modernization, and cost savings
+
+### 3. **Experience Timeline**
+- **Vertex Inc.** - SRE Lead (September 2024 - Present)
+- **Albert Invent** - Platform & SRE Engineer (August 2022 - September 2024)
+- **Lifebit Biotech** - Senior Software Engineer - Lead (December 2021 - August 2022)
+- **Dassault Systèmes** - Automation & DevOps Engineer (June 2020 - December 2021)
+- **Capgemini** - Associate Consultant - Software Engineer (May 2017 - June 2020)
+
+### 4. **Core Competencies**
+- **Cloud & Infrastructure**: Kubernetes, AWS, GCP, Azure, Terraform
+- **DevOps & Automation**: ArgoCD, Jenkins, Docker, Helm, GitOps
+- **Data & Streaming**: Kafka, Pulsar, Temporal, Event Streaming
+- **AI & ML Ops**: TensorFlow, PyTorch, Kubeflow, ML Platforms
+- **Programming**: Go, Python, Node.js, Bash
+- **Monitoring**: Prometheus, Grafana, ELK Stack, DataDog
+
+### 5. **Featured Projects**
+- **AI-Powered Regulatory Automation Platform** (Patent Invention)
+- **Multi-Cloud Enterprise Migration** (99.9% uptime)
+- **Multi-Tenant SaaS Platform** (1000+ customers)
+- **Legacy System Modernization** (60% performance improvement)
+- **DevOps Platform Engineering** (2 hours vs 2 days provisioning)
+
+### 6. **Contact Information**
+- Professional email and phone
+- LinkedIn profile with networking focus
+- GitHub repository showcase
+- Patent documentation link
+- Professional contact form with project type selection
 
 ## 🚀 Enhanced Features
 
@@ -52,85 +108,132 @@ This enhanced portfolio website presents Mukund Jangid's professional journey as
 ## 🛠 Technical Implementation
 
 ### Frontend Stack
-- **HTML5**: Semantic markup with accessibility considerations
-- **CSS3**: Custom properties, flexbox, grid, advanced animations
-- **JavaScript**: ES6+, Intersection Observer, performance optimization
-- **Fonts**: Inter font family for modern typography
-- **Icons**: Font Awesome for consistent iconography
+- **HTML5**: Semantic markup with accessibility and SEO optimization
+- **CSS3**: Custom properties, flexbox, grid, advanced animations, dual themes
+- **JavaScript**: ES6+, theme management, intersection observer, performance optimization
+- **Typography**: Inter font family for modern, professional appearance
+- **Icons**: Font Awesome for consistent iconography across all sections
 
-### Color Palette
+### Key Features
+- **Theme System**: Light/dark mode toggle with localStorage persistence
+- **Responsive Design**: Mobile-first approach with fluid layouts
+- **Performance Optimized**: Lazy loading, throttled events, efficient animations
+- **Accessibility**: ARIA labels, keyboard navigation, semantic structure
+- **Patent Integration**: Prominent patent holder recognition throughout
+- **Professional Contact**: Modal form with project type categorization
+
+### Color Schemes
+
+#### Light Theme (Default)
+- **Primary**: #2563eb (Professional Blue)
+- **Secondary**: #06b6d4 (Cyan)
+- **Accent**: #8b5cf6 (Purple)
+- **Background**: #ffffff (White)
+- **Cards**: #f8fafc (Light Gray)
+
+#### Dark Theme
 - **Primary**: #00d4ff (Cyan Blue)
 - **Secondary**: #0066ff (Blue)
 - **Accent**: #ff6b35 (Orange)
 - **Background**: #0a0a0a (Dark)
 - **Cards**: #1e1e1e (Dark Gray)
 
-### Media Support
-- **Images**: Lazy loading with placeholder support
-- **Videos**: Embedded project demos with custom controls
-- **Responsive Images**: Optimized for different screen sizes
-- **Photo Galleries**: Professional image showcase options
+## 🎯 Professional Positioning
 
-## 📱 Responsive Breakpoints
+### Technical Expertise
+- **AI Strategy**: Agentic AI systems, MCP servers, intelligent automation
+- **Platform Engineering**: Kubernetes operators, Infrastructure as Code, GitOps
+- **Cloud Architecture**: Multi-cloud migrations, enterprise-scale solutions
+- **DevOps Leadership**: CI/CD pipelines, monitoring, site reliability engineering
+- **Innovation**: Patent holder in AI-powered regulatory automation
 
-- **Desktop**: 1200px+ (Full layout)
-- **Tablet**: 768px - 1199px (Stacked sections)
-- **Mobile**: 320px - 767px (Single column)
+### Product Leadership
+- **Strategic Vision**: Translating technical capabilities into business value
+- **Cross-functional Leadership**: Engineering teams, stakeholder collaboration
+- **Product Strategy**: Roadmapping, technical requirements, business alignment
+- **Delivery Excellence**: End-to-end ownership, quality assurance, timeline management
+- **Team Building**: Mentoring, hiring, culture development
 
-## 🎨 Customization Options
+## 📱 Responsive Design
 
-### Adding Photos
-Replace placeholder images with professional photos:
+### Breakpoints
+- **Desktop**: 1200px+ (Full layout with sidebar navigation)
+- **Tablet**: 768px - 1199px (Stacked sections, touch-optimized)
+- **Mobile**: 320px - 767px (Single column, thumb navigation)
+
+### Mobile Optimizations
+- Touch-friendly navigation with hamburger menu
+- Optimized typography scaling
+- Simplified layouts maintaining professional appearance
+- Theme toggle accessible in mobile navigation
+- Contact form optimized for mobile input
+
+## 🎨 Customization Guide
+
+### Personal Information Updates
+```html
+<!-- Update in index.html -->
+<title>Your Name - Technical Product Manager & AI Strategist</title>
+<h1>Your Professional Title</h1>
+<p>Your unique value proposition...</p>
+```
+
+### Adding Your Professional Photo
 ```html
 <!-- Hero section profile -->
-<img src="your-professional-photo.jpg" alt="Your Name" class="profile-img">
-
-<!-- About section -->
-<img src="your-about-photo.jpg" alt="Professional Photo" class="about-img">
+<img src="your-professional-headshot.jpg" alt="Your Name" class="profile-img">
 ```
 
-### Adding Project Videos
-Add demo videos to showcase your work:
-```html
-<video poster="video-thumbnail.jpg" controls>
-    <source src="project-demo.mp4" type="video/mp4">
-</video>
-```
-
-### Color Customization
-Modify CSS custom properties in `styles.css`:
+### Theme Customization
 ```css
+/* Modify in styles.css */
 :root {
-    --primary-color: #your-color;
-    --secondary-color: #your-color;
-    --accent-color: #your-color;
+    --primary-color: #your-brand-color;
+    --secondary-color: #your-secondary-color;
+    --accent-color: #your-accent-color;
 }
 ```
 
-## 🚀 Getting Started
+### Contact Information
+```html
+<!-- Update contact links -->
+<a href="mailto:your.email@example.com">your.email@example.com</a>
+<a href="https://linkedin.com/in/yourprofile">LinkedIn Profile</a>
+<a href="https://github.com/yourusername">GitHub</a>
+```
 
+## 🚀 Deployment Options
+
+### Quick Start
 1. **Clone the repository**
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/mjangid7/portfolio-mjangid7.git
    cd portfolio-mjangid7
    ```
 
 2. **Customize content**
    - Update personal information in `index.html`
-   - Replace placeholder images with your photos
-   - Add your project videos and demos
-   - Modify contact information
+   - Replace `self.jpeg` with your professional photo
+   - Add your contact information
+   - Update social media links
 
 3. **Run locally**
    ```bash
-   # Simple HTTP server
+   # Python HTTP server
    python -m http.server 8000
-   # Or use VS Code Live Server extension
+   
+   # Node.js HTTP server
+   npx http-server
+   
+   # VS Code Live Server extension (recommended)
    ```
 
-4. **Deploy**
-   - Upload to your web hosting service
-   - Or deploy to GitHub Pages, Netlify, or Vercel
+### Hosting Platforms
+- **GitHub Pages**: Free hosting for public repositories
+- **Netlify**: Drag-and-drop deployment with custom domains
+- **Vercel**: Optimized for modern web applications
+- **Firebase Hosting**: Google's hosting platform
+- **Traditional Web Hosting**: Upload files via FTP/cPanel
 
 ## 📁 File Structure
 

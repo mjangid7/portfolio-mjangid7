@@ -31,7 +31,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>MJ</h2>
+                <h2>Mukund Jangid</h2>
                 <div class="logo-dot"></div>
             </div>
             <ul class="nav-menu">
@@ -72,10 +72,15 @@
                     </a>
                 </li>
             </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -116,6 +121,10 @@
                     <div class="stat-item">
                         <h3>7+</h3>
                         <p>Projects Delivered</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1</h3>
+                        <p>US WIPO PCT Patent</p>
                     </div>
                     <div class="stat-item">
                         <h3>3+</h3>
@@ -185,7 +194,8 @@
                         <p>
                             With 10+ years in the industry, I specialize in transforming technical challenges into strategic 
                             opportunities, leading cross-functional teams, and driving innovation in cloud-native architectures, 
-                            intelligent automation, and developer experience platforms.
+                            intelligent automation, and developer experience platforms. I hold a <strong>US WIPO PCT Patent</strong> 
+                            for AI-powered regulatory automation systems.
                         </p>
                     </div>
                     <div class="about-visual">
@@ -279,12 +289,31 @@
                 <div class="achievements-grid">
                     <div class="achievement-card">
                         <div class="achievement-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>US WIPO PCT Patent Holder</h4>
+                            <p>Inventor on <strong>patent WO2024233807A1</strong> for "Method of generating regulatory outputs" - AI-powered automation for chemical safety documentation</p>
+                            <span class="achievement-tech">
+                                <a href="https://patents.google.com/patent/WO2024233807A1" target="_blank">View Patent</a> • 
+                                <a href="https://www.tensorflow.org/learn" target="_blank">AI Algorithms</a> • 
+                                <a href="https://docs.python.org/3/library/automation.html" target="_blank">Regulatory Automation</a>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="achievement-content">
                             <h4>99.5% Time Reduction</h4>
                             <p>Cut cloud provisioning time from <strong>2 days to 2 hours</strong> with automated Infrastructure as Code</p>
-                            <span class="achievement-tech">Terraform • Kubernetes • GitOps</span>
+                            <span class="achievement-tech">
+                                <a href="https://developer.hashicorp.com/terraform/docs" target="_blank">Terraform</a> • 
+                                <a href="https://kubernetes.io/docs/" target="_blank">Kubernetes</a> • 
+                                <a href="https://opengitops.dev/" target="_blank">GitOps</a>
+                            </span>
                         </div>
                     </div>
                     
@@ -295,7 +324,11 @@
                         <div class="achievement-content">
                             <h4>99.9%+ Reliability</h4>
                             <p>Maintained <strong>enterprise-grade uptime</strong> through resilient architecture and monitoring</p>
-                            <span class="achievement-tech">Prometheus • Grafana • SRE Practices</span>
+                            <span class="achievement-tech">
+                                <a href="https://prometheus.io/docs/" target="_blank">Prometheus</a> • 
+                                <a href="https://grafana.com/docs/" target="_blank">Grafana</a> • 
+                                <a href="https://sre.google/" target="_blank">SRE Practices</a>
+                            </span>
                         </div>
                     </div>
                     
@@ -306,7 +339,11 @@
                         <div class="achievement-content">
                             <h4>Legacy Modernization</h4>
                             <p>Led <strong>3+ platform modernization</strong> initiatives across multiple Fortune 500 organizations</p>
-                            <span class="achievement-tech">Microservices • Event Streaming • API Design</span>
+                            <span class="achievement-tech">
+                                <a href="https://microservices.io/" target="_blank">Microservices</a> • 
+                                <a href="https://kafka.apache.org/documentation/streams/" target="_blank">Event Streaming</a> • 
+                                <a href="https://swagger.io/specification/" target="_blank">API Design</a>
+                            </span>
                         </div>
                     </div>
                     
@@ -317,7 +354,11 @@
                         <div class="achievement-content">
                             <h4>$2M+ Cost Savings</h4>
                             <p>Delivered significant <strong>operational savings</strong> through intelligent automation and optimization</p>
-                            <span class="achievement-tech">AI Platforms • Process Automation • Analytics</span>
+                            <span class="achievement-tech">
+                                <a href="https://www.tensorflow.org/learn" target="_blank">AI Platforms</a> • 
+                                <a href="https://docs.python.org/3/library/automation.html" target="_blank">Process Automation</a> • 
+                                <a href="https://www.elastic.co/guide/" target="_blank">Analytics</a>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -399,57 +440,57 @@
                 <div class="skill-card">
                     <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
                     <div class="skill-tags">
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">GCP</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">Terraform</span>
+                        <a href="https://kubernetes.io/docs/" target="_blank" class="tag">Kubernetes</a>
+                        <a href="https://docs.aws.amazon.com/" target="_blank" class="tag">AWS</a>
+                        <a href="https://cloud.google.com/docs" target="_blank" class="tag">GCP</a>
+                        <a href="https://docs.microsoft.com/en-us/azure/" target="_blank" class="tag">Azure</a>
+                        <a href="https://developer.hashicorp.com/terraform/docs" target="_blank" class="tag">Terraform</a>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-cogs"></i> DevOps & Automation</h3>
                     <div class="skill-tags">
-                        <span class="tag">ArgoCD</span>
-                        <span class="tag">Jenkins</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Helm</span>
-                        <span class="tag">GitOps</span>
+                        <a href="https://argo-cd.readthedocs.io/" target="_blank" class="tag">ArgoCD</a>
+                        <a href="https://www.jenkins.io/doc/" target="_blank" class="tag">Jenkins</a>
+                        <a href="https://docs.docker.com/" target="_blank" class="tag">Docker</a>
+                        <a href="https://helm.sh/docs/" target="_blank" class="tag">Helm</a>
+                        <a href="https://opengitops.dev/" target="_blank" class="tag">GitOps</a>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-stream"></i> Data & Streaming</h3>
                     <div class="skill-tags">
-                        <span class="tag">Kafka</span>
-                        <span class="tag">Pulsar</span>
-                        <span class="tag">Temporal</span>
-                        <span class="tag">Event Streaming</span>
+                        <a href="https://kafka.apache.org/documentation/" target="_blank" class="tag">Kafka</a>
+                        <a href="https://pulsar.apache.org/docs/" target="_blank" class="tag">Pulsar</a>
+                        <a href="https://docs.temporal.io/" target="_blank" class="tag">Temporal</a>
+                        <a href="https://kafka.apache.org/documentation/streams/" target="_blank" class="tag">Event Streaming</a>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-robot"></i> AI & ML Ops</h3>
                     <div class="skill-tags">
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">Kubeflow</span>
-                        <span class="tag">ML Platforms</span>
+                        <a href="https://www.tensorflow.org/learn" target="_blank" class="tag">TensorFlow</a>
+                        <a href="https://pytorch.org/docs/" target="_blank" class="tag">PyTorch</a>
+                        <a href="https://www.kubeflow.org/docs/" target="_blank" class="tag">Kubeflow</a>
+                        <a href="https://ml-ops.org/" target="_blank" class="tag">ML Platforms</a>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-code"></i> Programming</h3>
                     <div class="skill-tags">
-                        <span class="tag">Go</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Bash</span>
+                        <a href="https://go.dev/doc/" target="_blank" class="tag">Go</a>
+                        <a href="https://docs.python.org/" target="_blank" class="tag">Python</a>
+                        <a href="https://nodejs.org/en/docs/" target="_blank" class="tag">Node.js</a>
+                        <a href="https://www.gnu.org/software/bash/manual/" target="_blank" class="tag">Bash</a>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-chart-line"></i> Monitoring</h3>
                     <div class="skill-tags">
-                        <span class="tag">Prometheus</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">ELK Stack</span>
-                        <span class="tag">DataDog</span>
+                        <a href="https://prometheus.io/docs/" target="_blank" class="tag">Prometheus</a>
+                        <a href="https://grafana.com/docs/" target="_blank" class="tag">Grafana</a>
+                        <a href="https://www.elastic.co/guide/" target="_blank" class="tag">ELK Stack</a>
+                        <a href="https://docs.datadoghq.com/" target="_blank" class="tag">DataDog</a>
                     </div>
                 </div>
             </div>
@@ -468,14 +509,10 @@
                 <div class="project-card featured">
                     <div class="project-media">
                         <div class="project-video">
-                            <iframe 
-                                src="https://sfdc.hubs.vidyard.com/watch/cCaZQne2QJ_rzDSIQb_eIw?embed=true&type=inline" 
-                                width="100%" 
-                                height="300" 
-                                frameborder="0" 
-                                allowfullscreen
-                                title="AI Platform Demo">
-                            </iframe>
+                            <img 
+                                src="albert-thumb.png" 
+                                alt="AI Platform Demo Screenshot"
+                                class="project-image-featured">
                             <div class="video-overlay" style="display: none;">
                                 <div class="play-button">
                                     <i class="fas fa-play"></i>
@@ -489,31 +526,31 @@
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div class="project-meta">
-                                <h3>AI-Powered Automation Platform</h3>
-                                <span class="project-type">Product Leadership</span>
+                                <h3>AI-Powered Regulatory Automation Platform</h3>
+                                <span class="project-type">Product Leadership • Patent Invention</span>
                             </div>
                         </div>
-                        <p>Led the development of an intelligent automation platform using agentic AI and MCP servers, resulting in 40% reduction in manual processes and significant productivity improvements.</p>
+                        <p>Led the development of an intelligent automation platform using agentic AI for regulatory documentation, resulting in 40% reduction in manual processes. <strong>Inventor on US WIPO PCT Patent WO2024233807A1</strong> for "Method of generating regulatory outputs."</p>
                         <div class="project-metrics">
                             <div class="metric">
                                 <span class="metric-value">40%</span>
                                 <span class="metric-label">Process Automation</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">40%</span>
-                                <span class="metric-label">Tech Productivity Improved</span>
+                                <span class="metric-value">1</span>
+                                <span class="metric-label">US Patent Filed</span>
                             </div>
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">MCP</span>
+                            <a href="https://docs.python.org/" target="_blank" class="tech-tag">Python</a>
+                            <a href="https://www.tensorflow.org/learn" target="_blank" class="tech-tag">TensorFlow</a>
+                            <a href="https://kubernetes.io/docs/" target="_blank" class="tech-tag">Kubernetes</a>
+                            <a href="https://spec.modelcontextprotocol.io/" target="_blank" class="tech-tag">MCP</a>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://patents.google.com/patent/WO2024233807A1" target="_blank" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
-                                View Case Study
+                                View Patent
                             </a>
                         </div>
                     </div>
@@ -548,10 +585,10 @@
                             </div>
                             <p>Architected and executed seamless migration of enterprise applications from on-premises to multi-cloud architecture, achieving 99.9% uptime and 30% cost reduction.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">AWS</span>
-                                <span class="tech-tag">Azure</span>
-                                <span class="tech-tag">Terraform</span>
-                                <span class="tech-tag">Kubernetes</span>
+                                <a href="https://docs.aws.amazon.com/" target="_blank" class="tech-tag">AWS</a>
+                                <a href="https://docs.microsoft.com/en-us/azure/" target="_blank" class="tech-tag">Azure</a>
+                                <a href="https://developer.hashicorp.com/terraform/docs" target="_blank" class="tech-tag">Terraform</a>
+                                <a href="https://kubernetes.io/docs/" target="_blank" class="tech-tag">Kubernetes</a>
                             </div>
                         </div>
                     </div>
@@ -584,10 +621,10 @@
                             </div>
                             <p>Designed and built a scalable multi-tenant SaaS platform from scratch, supporting 1000+ enterprise customers with high availability and performance.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Redis</span>
+                                <a href="https://nodejs.org/en/docs/" target="_blank" class="tech-tag">Node.js</a>
+                                <a href="https://react.dev/learn" target="_blank" class="tech-tag">React</a>
+                                <a href="https://www.postgresql.org/docs/" target="_blank" class="tech-tag">PostgreSQL</a>
+                                <a href="https://redis.io/docs/" target="_blank" class="tech-tag">Redis</a>
                             </div>
                         </div>
                     </div>
@@ -620,10 +657,10 @@
                             </div>
                             <p>Transformed a 15-year-old monolithic system to microservices architecture, improving performance by 60% and reducing deployment time by 80%.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Microservices</span>
-                                <span class="tech-tag">API Gateway</span>
-                                <span class="tech-tag">Event Streaming</span>
+                                <a href="https://docs.docker.com/" target="_blank" class="tech-tag">Docker</a>
+                                <a href="https://microservices.io/" target="_blank" class="tech-tag">Microservices</a>
+                                <a href="https://swagger.io/specification/" target="_blank" class="tech-tag">API Gateway</a>
+                                <a href="https://kafka.apache.org/documentation/streams/" target="_blank" class="tech-tag">Event Streaming</a>
                             </div>
                         </div>
                     </div>
@@ -656,10 +693,10 @@
                             </div>
                             <p>Built custom Kubernetes operators and controllers to automate environment provisioning, reducing setup time from 2 days to 2 hours while maintaining 99.9% system reliability.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Go</span>
-                                <span class="tech-tag">Kubernetes</span>
-                                <span class="tech-tag">Terraform</span>
-                                <span class="tech-tag">ArgoCD</span>
+                                <a href="https://go.dev/doc/" target="_blank" class="tech-tag">Go</a>
+                                <a href="https://kubernetes.io/docs/" target="_blank" class="tech-tag">Kubernetes</a>
+                                <a href="https://developer.hashicorp.com/terraform/docs" target="_blank" class="tech-tag">Terraform</a>
+                                <a href="https://argo-cd.readthedocs.io/" target="_blank" class="tech-tag">ArgoCD</a>
                             </div>
                         </div>
                     </div>
@@ -771,10 +808,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Mukund Jangid. All rights reserved.</p>
+                <div class="footer-left">
+                    <p>&copy; 2025 Mukund Jangid. All rights reserved.</p>
+                    <p class="patent-notice">Inventor • <a href="https://patents.google.com/patent/WO2024233807A1" target="_blank">US WIPO PCT Patent WO2024233807A1</a></p>
+                </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/mukund-j-b01847b1/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/mjangid7" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://patents.google.com/patent/WO2024233807A1" target="_blank" class="social-link" title="View Patent"><i class="fas fa-certificate"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
