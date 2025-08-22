@@ -14,11 +14,11 @@ html {
 
 :root {
     /* Light Theme Colors */
-    --primary-bg: #ffffff;
-    --secondary-bg: #f8fafc;
-    --tertiary-bg: #f1f5f9;
-    --card-bg: #ffffff;
-    --card-bg-hover: #f8fafc;
+    --primary-bg: #f9fafb;
+    --secondary-bg: #f3f4f6;
+    --tertiary-bg: #e5e7eb;
+    --card-bg: #f9fafb;
+    --card-bg-hover: #f3f4f6;
     --border-color: #e2e8f0;
     --border-light: #cbd5e1;
     
@@ -154,11 +154,11 @@ html {
     --spacing-4xl: var(--space-24);
     
     /* Enhanced Transitions */
-    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --transition-smooth: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     
     /* Enhanced Border Radius */
     --radius-xs: 0.25rem;   /* 4px */
@@ -361,8 +361,8 @@ body::before {
 
 /* Custom Cursor */
 .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     background: var(--primary-color);
     border-radius: 50%;
     position: fixed;
@@ -372,14 +372,15 @@ body::before {
 }
 
 .cursor-outline {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--primary-color);
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--primary-color);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9997;
     transition: all 0.15s ease;
+    opacity: 0.6;
 }
 
 /* Container and Typography */
@@ -1149,6 +1150,9 @@ p {
 /* Button Icon Animations */
 .btn i {
     transition: all var(--transition-normal);
+    background: none;
+    border: none;
+    border-radius: 0;
 }
 
 .btn:hover i {
@@ -1173,6 +1177,113 @@ p {
         padding: var(--space-3) var(--space-4);
         font-size: var(--fs-sm);
         gap: var(--space-2);
+    }
+}
+
+/* Companies Section */
+.companies-section {
+    padding: var(--space-12) 0;
+    background: var(--secondary-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.companies-section .companies-text {
+    text-align: center;
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.companies-section .companies-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    flex-wrap: nowrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 0 var(--space-6);
+}
+
+.companies-section .company-link {
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+
+.companies-section .company-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.company-logo-big {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: grayscale(30%) opacity(0.8);
+    transition: all 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.company-logo-big:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+/* Responsive Companies Section */
+@media (max-width: 968px) {
+    .companies-section .companies-logos {
+        gap: var(--space-4);
+        padding: 0 var(--space-4);
+    }
+    
+    .company-logo-big {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .companies-section {
+        padding: var(--space-8) 0;
+    }
+    
+    .companies-section .companies-logos {
+        gap: var(--space-3);
+        padding: 0 var(--space-3);
+    }
+    
+    .company-logo-big {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .companies-section .companies-logos {
+        gap: var(--space-2);
+        padding: 0 var(--space-3);
+        justify-content: space-around;
+    }
+    
+    .company-logo-big {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .companies-section .company-link {
+        padding: var(--space-1);
     }
 }
 
@@ -3137,6 +3248,36 @@ a.tag:hover {
 
 .company-info {
     display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.company-info a {
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.company-info a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.company-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    background: var(--card-bg);
+    padding: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.company-details {
+    display: flex;
     flex-direction: column;
     gap: var(--space-1);
 }
@@ -3505,6 +3646,12 @@ a.tag:hover {
     transition: all var(--transition-normal);
 }
 
+.contact-action i {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
 .contact-card:hover .contact-action {
     color: var(--accent-secondary);
     transform: translateX(5px);
@@ -3827,6 +3974,17 @@ a.tag:hover {
     .timeline-item .company {
         font-size: var(--fs-sm);
         margin-bottom: var(--space-3);
+    }
+    
+    /* Company Logo Mobile Styles */
+    .company-logo {
+        width: 50px;
+        height: 50px;
+        padding: var(--space-1);
+    }
+    
+    .company-info {
+        gap: var(--space-3);
     }
     
     .timeline-item p {

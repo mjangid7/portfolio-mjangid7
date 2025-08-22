@@ -424,8 +424,8 @@ window.addEventListener('scroll', function() {
 
 // Enhanced Intersection Observer for animations with better performance
 const observerOptions = {
-    threshold: [0, 0.1, 0.25],
-    rootMargin: '0px 0px -50px 0px'
+    threshold: [0, 0.05],
+    rootMargin: '0px 0px 50px 0px'
 };
 
 const animationObserver = new IntersectionObserver(function(entries) {
@@ -444,7 +444,7 @@ const animationObserver = new IntersectionObserver(function(entries) {
                 children.forEach((child, index) => {
                     setTimeout(() => {
                         child.classList.add('animate-in');
-                    }, index * 100);
+                    }, index * 50);
                 });
             }, delay);
             
