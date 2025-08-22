@@ -1,5 +1,71 @@
 // Enhanced Portfolio JavaScript with Dark Theme Features and Performance Optimizations
 
+// Theme Management
+class ThemeManager {
+    constructor() {
+        this.currentTheme = localStorage.getItem('theme') || 'light';
+        this.themeToggle = null;
+        this.themeIcon = null;
+        this.init();
+    }
+    
+    init() {
+        // Set initial theme
+        this.setTheme(this.currentTheme);
+        
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.setupToggle());
+        } else {
+            this.setupToggle();
+        }
+    }
+    
+    setupToggle() {
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.themeIcon = document.getElementById('theme-icon');
+        
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            this.updateIcon();
+        }
+    }
+    
+    setTheme(theme) {
+        this.currentTheme = theme;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        this.updateIcon();
+    }
+    
+    toggleTheme() {
+        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Add transition class for smooth toggle
+        if (this.themeToggle) {
+            this.themeToggle.classList.add('transitioning');
+            setTimeout(() => {
+                this.themeToggle.classList.remove('transitioning');
+            }, 300);
+        }
+        
+        this.setTheme(newTheme);
+    }
+    
+    updateIcon() {
+        if (this.themeIcon) {
+            if (this.currentTheme === 'dark') {
+                this.themeIcon.className = 'fas fa-sun';
+            } else {
+                this.themeIcon.className = 'fas fa-moon';
+            }
+        }
+    }
+}
+
+// Initialize theme manager
+const themeManager = new ThemeManager();
+
 // Performance optimization - use passive listeners where possible
 const passiveSupported = (() => {
     let passiveSupported = false;
@@ -358,8 +424,8 @@ window.addEventListener('scroll', function() {
 
 // Enhanced Intersection Observer for animations with better performance
 const observerOptions = {
-    threshold: [0, 0.1, 0.25],
-    rootMargin: '0px 0px -50px 0px'
+    threshold: [0, 0.05],
+    rootMargin: '0px 0px 50px 0px'
 };
 
 const animationObserver = new IntersectionObserver(function(entries) {
@@ -378,7 +444,7 @@ const animationObserver = new IntersectionObserver(function(entries) {
                 children.forEach((child, index) => {
                     setTimeout(() => {
                         child.classList.add('animate-in');
-                    }, index * 100);
+                    }, index * 50);
                 });
             }, delay);
             
