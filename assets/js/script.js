@@ -1,8 +1,54 @@
-// Enhanced Portfolio JavaScript with Dark Theme Features and Performance Optimizations
+// Enhanced Portfolio JavaScript with Dark Theme Features, Performance Optimizations, and Accessibility
 
-// Theme Management
+// Accessibility utilities
+const AccessibilityUtils = {
+    // Announce dynamic content changes to screen readers
+    announce: function(message, priority = 'polite') {
+        const announcer = document.createElement('div');
+        announcer.setAttribute('aria-live', priority);
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.classList.add('sr-only');
+        document.body.appendChild(announcer);
+        
+        setTimeout(() => {
+            announcer.textContent = message;
+            setTimeout(() => {
+                document.body.removeChild(announcer);
+            }, 1000);
+        }, 100);
+    },
+    
+    // Manage focus for better keyboard navigation
+    manageFocus: function(element) {
+        if (element && typeof element.focus === 'function') {
+            element.focus();
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    },
+    
+    // Enhanced keyboard navigation
+    handleKeydown: function(event, callback) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            callback();
+        }
+    }
+};
+
+// Theme Management with Three Themes and Accessibility
 class ThemeManager {
     constructor() {
+        this.themes = ['light', 'blue-filter', 'dark'];
+        this.themeLabels = {
+            'light': 'Switch to blue light filter mode',
+            'blue-filter': 'Switch to dark mode', 
+            'dark': 'Switch to light mode'
+        };
+        this.themeIcons = {
+            'light': 'fas fa-eye',
+            'blue-filter': 'fas fa-moon',
+            'dark': 'fas fa-sun'
+        };
         this.currentTheme = localStorage.getItem('theme') || 'light';
         this.themeToggle = null;
         this.themeIcon = null;
@@ -27,19 +73,38 @@ class ThemeManager {
         
         if (this.themeToggle) {
             this.themeToggle.addEventListener('click', () => this.toggleTheme());
+            
+            // Add keyboard support
+            this.themeToggle.addEventListener('keydown', (e) => {
+                AccessibilityUtils.handleKeydown(e, () => this.toggleTheme());
+            });
+            
             this.updateIcon();
         }
     }
     
     setTheme(theme) {
+        const oldTheme = this.currentTheme;
         this.currentTheme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         this.updateIcon();
+        
+        // Announce theme change to screen readers
+        if (oldTheme !== theme) {
+            const themeNames = {
+                'light': 'Light',
+                'blue-filter': 'Blue Light Filter',
+                'dark': 'Dark'
+            };
+            AccessibilityUtils.announce(`Theme changed to ${themeNames[theme]} mode`);
+        }
     }
     
     toggleTheme() {
-        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        const currentIndex = this.themes.indexOf(this.currentTheme);
+        const nextIndex = (currentIndex + 1) % this.themes.length;
+        const newTheme = this.themes[nextIndex];
         
         // Add transition class for smooth toggle
         if (this.themeToggle) {
@@ -54,10 +119,19 @@ class ThemeManager {
     
     updateIcon() {
         if (this.themeIcon) {
-            if (this.currentTheme === 'dark') {
-                this.themeIcon.className = 'fas fa-sun';
-            } else {
-                this.themeIcon.className = 'fas fa-moon';
+            switch (this.currentTheme) {
+                case 'dark':
+                    this.themeIcon.className = 'fas fa-sun';
+                    this.themeToggle.setAttribute('aria-label', 'Switch to light mode');
+                    break;
+                case 'blue-filter':
+                    this.themeIcon.className = 'fas fa-moon';
+                    this.themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                    break;
+                default: // light
+                    this.themeIcon.className = 'fas fa-eye';
+                    this.themeToggle.setAttribute('aria-label', 'Switch to blue light filter mode');
+                    break;
             }
         }
     }
@@ -93,29 +167,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add entrance animations
     if (loadingText) {
-        loadingText.style.animation = 'fadeInUp 0.8s ease forwards 0.2s';
+        loadingText.style.animation = 'fadeInUp 0.5s ease forwards 0.1s';
         loadingText.style.opacity = '0';
     }
     
     if (loadingSubtitle) {
-        loadingSubtitle.style.animation = 'fadeInUp 0.8s ease forwards 0.4s';
+        loadingSubtitle.style.animation = 'fadeInUp 0.5s ease forwards 0.2s';
         loadingSubtitle.style.opacity = '0';
     }
     
     // Hide loading screen with stagger animation
     setTimeout(() => {
         if (loadingScreen) {
-            loadingScreen.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            loadingScreen.style.opacity = '0';
-            loadingScreen.style.transform = 'translateY(-20px)';
+            loadingScreen.classList.add('hidden');
             
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
                 // Trigger entrance animations for main content
                 document.body.classList.add('loaded');
-            }, 600);
+            }, 400);
         }
-    }, 1500);
+    }, 800);
 });
 
 // Enhanced custom cursor functionality with performance optimization
@@ -231,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Enhanced Mobile Navigation with better UX
+// Enhanced Mobile Navigation with Accessibility Support
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -240,9 +312,34 @@ const body = document.body;
 if (navToggle && navMenu) {
     let isMenuOpen = false;
     
+    // Set initial ARIA states
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('id', 'nav-menu');
+    
     navToggle.addEventListener('click', function(e) {
         e.preventDefault();
+        toggleMenu();
+    });
+    
+    // Keyboard support for menu toggle
+    navToggle.addEventListener('keydown', function(e) {
+        AccessibilityUtils.handleKeydown(e, () => toggleMenu());
+    });
+    
+    // Handle Escape key to close menu
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isMenuOpen) {
+            toggleMenu();
+            AccessibilityUtils.manageFocus(navToggle);
+        }
+    });
+    
+    function toggleMenu() {
         isMenuOpen = !isMenuOpen;
+        
+        // Update ARIA attributes
+        navToggle.setAttribute('aria-expanded', isMenuOpen);
+        navToggle.setAttribute('aria-label', isMenuOpen ? 'Close navigation menu' : 'Open navigation menu');
         
         // Toggle menu visibility
         navMenu.classList.toggle('active', isMenuOpen);
@@ -251,7 +348,12 @@ if (navToggle && navMenu) {
         // Prevent body scroll when menu is open
         body.style.overflow = isMenuOpen ? 'hidden' : '';
         
-        // Enhanced hamburger animation
+        // Announce menu state change
+        AccessibilityUtils.announce(
+            isMenuOpen ? 'Navigation menu opened' : 'Navigation menu closed'
+        );
+        
+        // Enhanced hamburger animation with accessibility
         const bars = navToggle.querySelectorAll('.bar');
         bars.forEach((bar, index) => {
             if (isMenuOpen) {
@@ -270,14 +372,18 @@ if (navToggle && navMenu) {
             }
         });
         
-        // Add focus trap for accessibility
+        // Focus management
         if (isMenuOpen) {
+            // Move focus to first menu item
             const firstFocusableElement = navMenu.querySelector('.nav-link');
             if (firstFocusableElement) {
-                setTimeout(() => firstFocusableElement.focus(), 300);
+                setTimeout(() => AccessibilityUtils.manageFocus(firstFocusableElement), 300);
             }
+        } else {
+            // Return focus to toggle button
+            AccessibilityUtils.manageFocus(navToggle);
         }
-    });
+    }
     
     // Enhanced mobile menu link handling
     navLinks.forEach((link, index) => {
@@ -285,7 +391,7 @@ if (navToggle && navMenu) {
             if (isMenuOpen) {
                 // Add delay to see the click effect
                 setTimeout(() => {
-                    closeMobileMenu();
+                    toggleMenu(); // Use the accessible toggle function
                 }, 150);
             }
         });
@@ -444,7 +550,7 @@ const animationObserver = new IntersectionObserver(function(entries) {
                 children.forEach((child, index) => {
                     setTimeout(() => {
                         child.classList.add('animate-in');
-                    }, index * 50);
+                    }, index * 20);
                 });
             }, delay);
             
@@ -493,10 +599,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add initial styles for animation
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        el.style.transition = 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         
         // Add stagger delay
-        el.dataset.delay = index * 50;
+        el.dataset.delay = index * 20;
         
         animationObserver.observe(el);
     });

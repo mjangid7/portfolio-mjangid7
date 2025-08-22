@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mukund Jangid - Technical Product Manager & AI Strategist</title>
     <meta name="description" content="Technical Product Manager specializing in AI-powered platforms, DevOps, and enterprise-scale solutions">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="author" content="Mukund Jangid">
+    <meta name="keywords" content="technical product manager, AI strategist, platform engineering, DevOps, full stack developer">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,11 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
+    <div id="loading-screen" class="loading-screen" role="status" aria-live="polite" aria-label="Page loading">
         <div class="loading-content">
             <div class="loading-logo">
-                <div class="loading-spinner"></div>
+                <div class="loading-spinner" aria-hidden="true"></div>
             </div>
             <h2 class="loading-text">Mukund Jangid</h2>
             <p class="loading-subtitle">Technical Product Manager</p>
@@ -25,188 +30,246 @@
     </div>
 
     <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-outline" aria-hidden="true"></div>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <h2>Mukund Jangid</h2>
-                <div class="logo-dot"></div>
+                <div class="logo-dot" aria-hidden="true"></div>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#hero" class="nav-link">
+            <ul class="nav-menu" role="menubar">
+                <li class="nav-item" role="none">
+                    <a href="#hero" class="nav-link" role="menuitem" aria-describedby="nav-home-desc">
                         <span class="nav-text">Home</span>
-                        <span class="nav-number">01</span>
+                        <span class="nav-number" aria-hidden="true">01</span>
                     </a>
+                    <span id="nav-home-desc" class="sr-only">Go to homepage section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#about" class="nav-link" role="menuitem" aria-describedby="nav-about-desc">
                         <span class="nav-text">About</span>
-                        <span class="nav-number">02</span>
+                        <span class="nav-number" aria-hidden="true">02</span>
                     </a>
+                    <span id="nav-about-desc" class="sr-only">Go to about me section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#experience" class="nav-link" role="menuitem" aria-describedby="nav-experience-desc">
                         <span class="nav-text">Experience</span>
-                        <span class="nav-number">03</span>
+                        <span class="nav-number" aria-hidden="true">03</span>
                     </a>
+                    <span id="nav-experience-desc" class="sr-only">Go to professional experience section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#skills" class="nav-link" role="menuitem" aria-describedby="nav-skills-desc">
                         <span class="nav-text">Skills</span>
-                        <span class="nav-number">04</span>
+                        <span class="nav-number" aria-hidden="true">04</span>
                     </a>
+                    <span id="nav-skills-desc" class="sr-only">Go to skills and competencies section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#education" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#education" class="nav-link" role="menuitem" aria-describedby="nav-education-desc">
                         <span class="nav-text">Education</span>
-                        <span class="nav-number">05</span>
+                        <span class="nav-number" aria-hidden="true">05</span>
                     </a>
+                    <span id="nav-education-desc" class="sr-only">Go to education and certifications section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#projects" class="nav-link" role="menuitem" aria-describedby="nav-projects-desc">
                         <span class="nav-text">Projects</span>
-                        <span class="nav-number">06</span>
+                        <span class="nav-number" aria-hidden="true">06</span>
                     </a>
+                    <span id="nav-projects-desc" class="sr-only">Go to featured projects section</span>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">
+                <li class="nav-item" role="none">
+                    <a href="#contact" class="nav-link" role="menuitem" aria-describedby="nav-contact-desc">
                         <span class="nav-text">Contact</span>
-                        <span class="nav-number">07</span>
+                        <span class="nav-number" aria-hidden="true">07</span>
                     </a>
+                    <span id="nav-contact-desc" class="sr-only">Go to contact information section</span>
                 </li>
             </ul>
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="theme-icon"></i>
+                <button id="theme-toggle" class="theme-toggle" 
+                        aria-label="Switch to blue light filter mode" 
+                        aria-describedby="theme-toggle-desc"
+                        type="button">
+                    <i class="fas fa-eye" id="theme-icon" aria-hidden="true"></i>
+                    <span class="sr-only" id="theme-toggle-desc">Toggle between light, blue light filter, and dark themes</span>
                 </button>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                </div>
+                <button class="nav-toggle" 
+                        aria-label="Toggle navigation menu" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu"
+                        type="button">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-bg">
-            <div class="hero-particles"></div>
-            <div class="hero-grid"></div>
-            <div class="hero-gradient-orbs">
-                <div class="gradient-orb orb-1"></div>
-                <div class="gradient-orb orb-2"></div>
-                <div class="gradient-orb orb-3"></div>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-particles"></div>
+                <div class="hero-grid"></div>
+                <div class="hero-gradient-orbs">
+                    <div class="gradient-orb orb-1"></div>
+                    <div class="gradient-orb orb-2"></div>
+                    <div class="gradient-orb orb-3"></div>
+                </div>
+                <div class="hero-mesh"></div>
             </div>
-            <div class="hero-mesh"></div>
-        </div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-text">Available for New Opportunities</span>
-                    <div class="badge-pulse"></div>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Technical</span>
-                    <span class="title-line gradient-text">Product Manager</span>
-                    <span class="title-line">& AI Strategist</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Transforming complex technical challenges into strategic product solutions. 
-                    Specialized in AI-powered platforms, enterprise-scale architectures, and 
-                    bridging the gap between engineering excellence and business impact.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3>10+</h3>
-                        <p>Years Experience</p>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge" role="status" aria-live="polite">
+                        <span class="badge-text">Available for New Opportunities</span>
+                        <div class="badge-pulse" aria-hidden="true"></div>
                     </div>
-                    <div class="stat-item">
-                        <h3>7+</h3>
-                        <p>Projects Delivered</p>
+                    <h1 id="hero-title" class="hero-title">
+                        <span class="title-line">Technical</span>
+                        <span class="title-line gradient-text">Product Manager</span>
+                        <span class="title-line">& AI Strategist</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Transforming complex technical challenges into strategic product solutions. 
+                        Specialized in AI-powered platforms, enterprise-scale architectures, and 
+                        bridging the gap between engineering excellence and business impact.
+                    </p>
+                    <div class="hero-stats" role="region" aria-labelledby="stats-heading">
+                        <h2 id="stats-heading" class="sr-only">Professional Statistics</h2>
+                        <div class="stat-item">
+                            <h3 aria-describedby="stat-years-desc">10+</h3>
+                            <p id="stat-years-desc">Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 aria-describedby="stat-projects-desc">7+</h3>
+                            <p id="stat-projects-desc">Projects Delivered</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 aria-describedby="stat-patent-desc">1</h3>
+                            <p id="stat-patent-desc">US WIPO PCT Patent</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 aria-describedby="stat-migrations-desc">3+</h3>
+                            <p id="stat-migrations-desc">Cloud Migrations</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3>1</h3>
-                        <p>US WIPO PCT Patent</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>3+</h3>
-                        <p>Cloud Migrations</p>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary" aria-describedby="cta-work-desc">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <span id="cta-work-desc" class="sr-only">Navigate to projects showcase section</span>
 
-                    <a href="https://www.linkedin.com/in/mukund-j-b01847b1/" target="_blank" class="btn btn-linkedin">
-                        <span>LinkedIn Profile</span>
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                        <a href="https://www.linkedin.com/in/mukund-j-b01847b1/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn btn-linkedin" 
+                           aria-describedby="cta-linkedin-desc">
+                            <span>LinkedIn Profile</span>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <span id="cta-linkedin-desc" class="sr-only">Visit Mukund Jangid's LinkedIn profile (opens in new tab)</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="assets/images/self.jpeg" 
+                                 alt="Professional headshot of Mukund Jangid, Technical Product Manager and AI Strategist" 
+                                 class="profile-img"
+                                 loading="eager"
+                                 width="300" 
+                                 height="300">
+                            <div class="profile-ring" aria-hidden="true"></div>
+                            <div class="profile-glow" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <div class="floating-elements" aria-hidden="true">
+                        <div class="floating-item" data-tech="AI" style="--delay: 0s;" role="presentation">
+                            <i class="fas fa-brain" aria-label="AI Technology"></i>
+                        </div>
+                        <div class="floating-item" data-tech="Cloud" style="--delay: 1s;" role="presentation">
+                            <i class="fas fa-cloud" aria-label="Cloud Technology"></i>
+                        </div>
+                        <div class="floating-item" data-tech="DevOps" style="--delay: 2s;" role="presentation">
+                            <i class="fas fa-cogs" aria-label="DevOps Technology"></i>
+                        </div>
+                        <div class="floating-item" data-tech="Product" style="--delay: 3s;" role="presentation">
+                            <i class="fas fa-rocket" aria-label="Product Management"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="profile-container">
-                    <div class="profile-image">
-                        <img src="self.jpeg" alt="Mukund Jangid" class="profile-img">
-                        <div class="profile-ring"></div>
-                        <div class="profile-glow"></div>
-                    </div>
-                </div>
-                <div class="floating-elements">
-                    <div class="floating-item" data-tech="AI" style="--delay: 0s;">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="floating-item" data-tech="Cloud" style="--delay: 1s;">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="floating-item" data-tech="DevOps" style="--delay: 2s;">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="floating-item" data-tech="Product" style="--delay: 3s;">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll to explore</span>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span class="scroll-text">Scroll to explore</span>
-        </div>
-    </section>
+        </section>
 
-    <!-- Companies Section -->
-    <section class="companies-section">
-        <div class="container">
-            <p class="companies-text">Trusted by leading organizations</p>
-            <div class="companies-logos">
-                <a href="https://www.vertexinc.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="vertex_logo.png" alt="Vertex Inc." class="company-logo-big">
-                </a>
-                <a href="https://www.mckinsey.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="MCK_LOGO.png" alt="McKinsey & Company" class="company-logo-big">
-                </a>
-                <a href="https://www.albertinvent.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="albert_logo.png" alt="Albert Invent" class="company-logo-big">
+        <!-- Companies Section -->
+        <section class="companies-section" aria-labelledby="companies-heading">
+            <div class="container">
+                <h2 id="companies-heading" class="companies-text">Trusted by leading organizations</h2>
+                <div class="companies-logos" role="list" aria-label="Companies I have worked with">
+                    <a href="https://www.vertexinc.com" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="company-link"
+                       role="listitem"
+                       aria-label="Visit Vertex Inc website">
+                        <img src="assets/images/logos/vertex_logo.png" 
+                             alt="Vertex Inc logo" 
+                             class="company-logo-big"
+                             width="120" 
+                             height="60">
+                    </a>
+                    <a href="https://www.mckinsey.com" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="company-link"
+                       role="listitem"
+                       aria-label="Visit McKinsey & Company website">
+                        <img src="assets/images/logos/mc_logo.png" 
+                             alt="McKinsey & Company logo" 
+                             class="company-logo-big"
+                             width="120" 
+                             height="60">
+                    </a>
+                    <a href="https://www.albertinvent.com" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="company-link"
+                       role="listitem"
+                       aria-label="Visit Albert Invent website">
+                        <img src="assets/images/logos/albert_logo.png" 
+                             alt="Albert Invent logo" 
+                             class="company-logo-big"
+                             width="120" 
+                             height="60">
                 </a>
                 <a href="https://lifebit.ai" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="lifebit_logo.png" alt="Lifebit Biotech" class="company-logo-big">
+                    <img src="assets/images/logos/lifebit_logo.png" alt="Lifebit Biotech" class="company-logo-big">
                 </a>
                 <a href="https://www.3ds.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="3ds_logo.png" alt="Dassault Systèmes" class="company-logo-big">
+                    <img src="assets/images/logos/3ds_logo.png" alt="Dassault Systèmes" class="company-logo-big">
                 </a>
                 <a href="https://www.medidata.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="medidata_logo.png" alt="Medidata Solutions" class="company-logo-big">
+                    <img src="assets/images/logos/medidata_logo.png" alt="Medidata Solutions" class="company-logo-big">
                 </a>                
                 <a href="https://www.capgemini.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="cg_logo.png" alt="Capgemini" class="company-logo-big">
+                    <img src="assets/images/logos/cg_logo.png" alt="Capgemini" class="company-logo-big">
                 </a>
                 <a href="https://www.morganstanley.com" target="_blank" rel="noopener noreferrer" class="company-link">
-                    <img src="morgan_logo.png" alt="Morgan Stanley" class="company-logo-big">
+                    <img src="assets/images/logos/morgan_logo.png" alt="Morgan Stanley" class="company-logo-big">
                 </a>                
             </div>
         </div>
@@ -456,7 +519,7 @@
                             <h3>Product Owner - Platform Transformation</h3>
                             <div class="company-info">
                                 <a href="https://www.vertexinc.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="vertex_logo.png" alt="Vertex Inc." class="company-logo">
+                                    <img src="assets/images/logos/vertex_logo.png" alt="Vertex Inc." class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">Vertex Inc.</span>
@@ -493,7 +556,7 @@
                             <h3>Forward Program Scholar</h3>
                             <div class="company-info">
                                 <a href="https://www.mckinsey.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="MCK_LOGO.png" alt="McKinsey & Company" class="company-logo">
+                                    <img src="assets/images/logos/mc_logo.png" alt="McKinsey & Company" class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">McKinsey & Company</span>
@@ -530,7 +593,7 @@
                             <h3>Platform & Site Reliability Engineer</h3>
                             <div class="company-info">
                                 <a href="https://www.albertinvent.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="albert_logo.png" alt="Albert Invent" class="company-logo">
+                                    <img src="assets/images/logos/albert_logo.png" alt="Albert Invent" class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">Albert Invent</span>
@@ -569,7 +632,7 @@
                             <h3>Senior Software Engineer - Lead</h3>
                             <div class="company-info">
                                 <a href="https://lifebit.ai" target="_blank" rel="noopener noreferrer">
-                                    <img src="lifebit_logo.png" alt="Lifebit Biotech" class="company-logo">
+                                    <img src="assets/images/logos/lifebit_logo.png" alt="Lifebit Biotech" class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">Lifebit Biotech</span>
@@ -607,7 +670,7 @@
                             <h3>Research & Development Engineer</h3>
                             <div class="company-info">
                                 <a href="https://www.3ds.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="3ds_logo.png" alt="Dassault Systèmes" class="company-logo">
+                                    <img src="assets/images/logos/3ds_logo.png" alt="Dassault Systèmes" class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">Dassault Systèmes</span>
@@ -645,7 +708,7 @@
                             <h3>Associate Consultant - Software Engineer</h3>
                             <div class="company-info">
                                 <a href="https://www.capgemini.com" target="_blank" rel="noopener noreferrer">
-                                    <img src="cg_logo.png" alt="Capgemini" class="company-logo">
+                                    <img src="assets/images/logos/cg_logo.png" alt="Capgemini" class="company-logo">
                                 </a>
                                 <div class="company-details">
                                     <span class="company-name">Capgemini</span>
@@ -1318,22 +1381,49 @@
             </div>
             <div class="modal-content">
                 <p>Let's discuss your project and how I can help bring your vision to life.</p>
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" 
+                      class="contact-form" 
+                      role="form" 
+                      aria-labelledby="contact-form-title"
+                      novalidate>
+                    <h3 id="contact-form-title" class="sr-only">Contact Form</h3>
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                        <input type="text" 
+                               id="name" 
+                               name="name" 
+                               required 
+                               aria-required="true"
+                               aria-describedby="name-error"
+                               placeholder="Your full name">
+                        <span id="name-error" class="error-message sr-only" role="alert"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required 
+                               aria-required="true"
+                               aria-describedby="email-error email-help"
+                               placeholder="your.email@example.com">
+                        <span id="email-help" class="sr-only">We'll use this to get back to you about your project</span>
+                        <span id="email-error" class="error-message sr-only" role="alert"></span>
                     </div>
                     <div class="form-group">
                         <label for="company">Company/Organization</label>
-                        <input type="text" id="company" name="company" placeholder="Your company name">
+                        <input type="text" 
+                               id="company" 
+                               name="company" 
+                               aria-describedby="company-help"
+                               placeholder="Your company name">
+                        <span id="company-help" class="sr-only">Optional: Tell us about your organization</span>
                     </div>
                     <div class="form-group">
                         <label for="project">Project Type</label>
-                        <select id="project" name="project">
+                        <select id="project" 
+                                name="project"
+                                aria-describedby="project-help">
                             <option value="">Select project type</option>
                             <option value="ai-platform">AI Platform Development</option>
                             <option value="cloud-migration">Cloud Migration</option>
@@ -1343,14 +1433,25 @@
                             <option value="technical-consulting">Technical Consulting</option>
                             <option value="other">Other</option>
                         </select>
+                        <span id="project-help" class="sr-only">Optional: Help us understand your project type</span>
                     </div>
                     <div class="form-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" required rows="4" placeholder="Tell me about your project, challenges, and goals..."></textarea>
+                        <textarea id="message" 
+                                  name="message" 
+                                  required 
+                                  aria-required="true"
+                                  aria-describedby="message-error message-help"
+                                  rows="4" 
+                                  placeholder="Tell me about your project, challenges, and goals..."></textarea>
+                        <span id="message-help" class="sr-only">Describe your project, challenges, and what you'd like to achieve</span>
+                        <span id="message-error" class="error-message sr-only" role="alert"></span>
                     </div>
                     <div class="form-group">
                         <label for="timeline">Preferred Timeline</label>
-                        <select id="timeline" name="timeline">
+                        <select id="timeline" 
+                                name="timeline"
+                                aria-describedby="timeline-help">
                             <option value="">Select timeline</option>
                             <option value="asap">ASAP</option>
                             <option value="1-2-weeks">1-2 weeks</option>
@@ -1372,7 +1473,8 @@
             </div>
         </div>
     </div>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
